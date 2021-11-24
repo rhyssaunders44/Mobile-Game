@@ -12,7 +12,7 @@ public class ObbyManager : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        speed = 70 + Time.timeSinceLevelLoad;
+        speed = 70 + Time.timeSinceLevelLoad * 1.5f;
         float size =  5 + Time.timeSinceLevelLoad / 15;
         gameObject.transform.localScale = new Vector3(1 + size, 3+ size, 1 + size);
     }

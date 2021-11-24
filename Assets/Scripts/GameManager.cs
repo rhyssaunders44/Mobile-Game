@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver;
 
     [SerializeField] private GameObject gameOverObjects;
-    private float score;
+    public float score;
     public Text scoreText, final;
 
     private void FixedUpdate()
