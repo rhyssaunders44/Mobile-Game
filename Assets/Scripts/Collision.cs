@@ -11,5 +11,6 @@ public class Collision : MonoBehaviour
         Debug.Log(other.tag);
         var GameMan = manager.GetComponent<GameManager>();
         GameMan.gameOver = true;
+        GameMan.GameOver();
     }
 }

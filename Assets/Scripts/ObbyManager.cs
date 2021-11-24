@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class ObbyManager : MonoBehaviour
 {
-    private float lifetime = 30;
+    private float lifetime = 15;
     private Rigidbody rb;
     private float speed;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        speed = 30 + Time.timeSinceLevelLoad / 2;
-        float size = Time.timeSinceLevelLoad / 15;
+        speed = 70 + Time.timeSinceLevelLoad;
+        float size =  5 + Time.timeSinceLevelLoad / 15;
         gameObject.transform.localScale = new Vector3(1 + size, 3+ size, 1 + size);
     }
 

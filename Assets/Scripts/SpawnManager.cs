@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject Obstacle;
     private float nextSpawn, delay = 0.7f;
     [SerializeField] private GameObject spawnManager, spawner;
-    private float maxSpawn = 35;
+    private float maxSpawn = 40;
 
 
     private void Start()

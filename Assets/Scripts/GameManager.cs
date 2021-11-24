@@ -9,8 +9,10 @@ using UnityEngine.Android;
 public class GameManager : MonoBehaviour
 {
     public bool gameOver;
+
+    [SerializeField] private GameObject gameOverObjects;
     private float score;
-    public Text scoreText;
+    public Text scoreText, final;
 
     private void FixedUpdate()
     {
@@ -19,6 +21,13 @@ public class GameManager : MonoBehaviour
             score += 1;
             scoreText.text = "points: " + score;
         }
+    }
+
+    public void GameOver()
+    {
+        gameOverObjects.SetActive(true);
+        Time.timeScale = 0;
+        final.text = score + "Points";
     }
 
 }
