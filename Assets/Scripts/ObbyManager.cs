@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class ObbyManager : MonoBehaviour
 {
-    private float lifetime = 15;
+    public float lifeTime;
     private Rigidbody rb;
     private float speed;
+    public GameObject spawnManager;
+    private SpawnManager sm;
 
     private void Start()
     {
+        sm = spawnManager.GetComponent<SpawnManager>();
         rb = GetComponent<Rigidbody>();
         speed = 70 + Time.timeSinceLevelLoad * 1.5f;
         float size =  5 + Time.timeSinceLevelLoad / 15;
@@ -19,7 +22,10 @@ public class ObbyManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Time.time > lifeTime)
+        {
+            sm.Despawn(gameObject);
+        }
         rb.velocity = Vector3.back * speed;
-        Destroy(gameObject, lifetime);
     }
 }
